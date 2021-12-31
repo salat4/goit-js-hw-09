@@ -6,8 +6,9 @@ const delay = document.querySelector("input[name=delay]");
 const step = document.querySelector("input[name=step]");
 const amount = document.querySelector("input[name=amount]");
 const form = document.querySelector('.form');
+const button = document.querySelector('button')
 
-
+button.setAttribute("disabled","disabled");
 
 function createPromise(position, delay) {
     return new Promise((resolve, reject) => {
@@ -20,12 +21,16 @@ function createPromise(position, delay) {
 });
 }
 function qwe(e) {
-    e.preventDefault();
+  button.setAttribute("disabled","disabled");
+  e.preventDefault();
   let  delayValue = Number(delay.value);
   const stepValue = Number(step.value);
   const  amountValue = Number(amount.value);
   let qwe = 0
+
+  
   if (stepValue === 0) {
+  
     for (let i = 0; i < amountValue; i++) {
       setTimeout(() => {
         createPromise(i + 1, delayValue)
@@ -40,6 +45,7 @@ function qwe(e) {
     }
   }
   else {
+    
     for (let i = 0; i < amountValue; i++) {
       qwe = qwe + stepValue;
       function time() { 
@@ -64,4 +70,16 @@ function qwe(e) {
     }
   }
 }
+function examination() { 
+if (button.hasAttribute("disabled")) {
+    button.removeAttribute("disabled", "disabled");
+  }
+  else { 
+button.setAttribute("disabled","disabled");
+  }
+
+
+}
+
 form.addEventListener("submit", qwe)
+delay.addEventListener("click",examination)
