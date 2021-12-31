@@ -45,7 +45,7 @@ function qwe(e) {
       function time() { 
         if (i < 1) {
           
-          return delayValuуe
+          return delayValue
         }
         else {
           return qwe + delayValue - stepValue
