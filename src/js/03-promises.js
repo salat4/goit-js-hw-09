@@ -44,8 +44,8 @@ function qwe(e) {
       qwe = qwe + stepValue;
       function time() { 
         if (i < 1) {
-          console.log(delayValue)
-          return delayValuу
+          
+          return delayValuуe
         }
         else {
           return qwe + delayValue - stepValue
